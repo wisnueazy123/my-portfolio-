@@ -129,9 +129,6 @@ export default function ProjectGudangKita() {
             <a href="https://github.com/wisnueazy123/inventory-managemen" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               GitHub Repository
             </a>
-            <a href="http://localhost:8000" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-              Live Demo
-            </a>
           </div>
         </motion.div>
 
