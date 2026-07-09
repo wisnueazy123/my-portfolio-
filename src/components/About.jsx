@@ -23,14 +23,15 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <p>
-              Saya adalah seorang developer yang passionate dalam membangun aplikasi web
-              modern. Dengan pengalaman dalam full-stack development, saya menikmati
-              proses mengubah ide kompleks menjadi solusi yang sederhana, indah, dan
-              mudah digunakan.
+              Saya adalah seorang <strong>Web Developer</strong> yang fokus pada pengembangan
+              aplikasi web berbasis <strong>Laravel & PHP</strong>. Saya memiliki pengalaman
+              dalam membangun sistem manajemen inventaris, website organisasi, serta
+              mengelola media sosial dan administrasi penjualan.
             </p>
             <p>
-              Saya memiliki keahlian dalam Laravel, React, dan MySQL. Fokus utama saya
-              adalah keamanan data, performa aplikasi, dan user experience yang optimal.
+              Dengan latar belakang di bidang <strong>IT Support</strong> dan <strong>Sales/Admin</strong>,
+              saya memahami kebutuhan bisnis dari sisi teknis maupun operasional. Saya senang
+              memecahkan masalah dan menciptakan solusi digital yang membantu kerja tim.
             </p>
             <div className="about-info">
               <div className="info-item">
@@ -50,8 +51,8 @@ export default function About() {
               <div className="info-item">
                 <FiCalendar className="info-icon" />
                 <div>
-                  <strong> Pengalaman</strong>
-                  <span>2+ Tahun</span>
+                  <strong>Pengalaman</strong>
+                  <span>3+ Tahun</span>
                 </div>
               </div>
               <div className="info-item">
