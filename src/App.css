@@ -451,6 +451,14 @@
   font-size: 3rem;
   font-weight: 700;
   color: #fff;
+  overflow: hidden;
+  box-shadow: 0 10px 40px var(--accent-glow);
+}
+
+.avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {

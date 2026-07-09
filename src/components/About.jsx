@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FiMapPin, FiMail, FiCalendar } from 'react-icons/fi'
+import profileImg from '../assets/profile.png'
 
 export default function About() {
   return (
@@ -72,7 +73,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <div className="avatar-placeholder">
-              <span>WP</span>
+              <img src={profileImg} alt="Wisnu Prasetyo" />
             </div>
           </motion.div>
         </div>
