@@ -12,6 +12,7 @@ import Certificates from './components/Certificates'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ProjectGudangKita from './pages/ProjectGudangKita'
+import ProjectCraion from './pages/ProjectCraion'
 import './App.css'
 
 function HomePage() {
@@ -43,6 +44,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/project/gudangkita" element={<ProjectGudangKita />} />
+            <Route path="/project/craion" element={<ProjectCraion />} />
           </Routes>
         )}
       </BrowserRouter>

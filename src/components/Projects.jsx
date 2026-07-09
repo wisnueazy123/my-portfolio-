@@ -19,7 +19,7 @@ const projects = [
     desc: 'Landing page responsif untuk organisasi karang taruna CRAION (Creative Generation). Fitur meliputi hero section dengan animasi particle, profil organisasi & visi-misi, struktur pengurus, program kegiatan (bakti sosial, olahraga, event 17 Agustus, santunan), riwayat desain jersey per tahun, galeri kegiatan, pencapaian/prestasi, testimoni warga menggunakan carousel, formulir kontak, serta integrasi Google Maps untuk lokasi sekretariat.',
     tags: ['Laravel 10', 'Bootstrap 5', 'PHP', 'Blade Template', 'Google Maps API', 'AOS Animation'],
     github: 'https://github.com/wisnueazy123/karang-taruna',
-    live: 'http://localhost:8000',
+    detail: '/project/craion',
     image: craionImg
   }
 ]
