@@ -38,7 +38,7 @@ export default function About() {
                 <FiMail className="info-icon" />
                 <div>
                   <strong>Email</strong>
-                  <span>wisnu@example.com</span>
+                  <span>prasetyowisnu611@gmail.com</span>
                 </div>
               </div>
               <div className="info-item">
