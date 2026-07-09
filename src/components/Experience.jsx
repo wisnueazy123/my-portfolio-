@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiBriefcase, FiShoppingBag, FiMonitor } from 'react-icons/fi'
+import { FiShoppingBag, FiMonitor } from 'react-icons/fi'
 
 const experiences = [
   {
@@ -29,17 +29,7 @@ const experiences = [
       'Mendukung operasional tim IT',
     ]
   },
-  {
-    role: 'Full Stack Developer',
-    company: 'Proyek Akademis',
-    period: '2025 - Sekarang',
-    icon: <FiBriefcase />,
-    desc: [
-      'Mengembangkan Sistem Inventaris Gudang "GudangKita" dengan Laravel 10',
-      'Menerapkan autentikasi multi-level user dan enkripsi AES-256',
-      'Membangun website landing page CARION dengan Bootstrap 5 & Google Maps API',
-    ]
-  }
+
 ]
 
 const fadeUp = {
