@@ -37,7 +37,6 @@ export default function Navbar() {
           <li><button onClick={() => scrollTo('skills')}>Skills</button></li>
           <li><button onClick={() => scrollTo('projects')}>Projects</button></li>
           <li><button onClick={() => scrollTo('experience')}>Experience</button></li>
-          <li><button onClick={() => scrollTo('certificates')}>Sertifikat</button></li>
           <li><button onClick={() => scrollTo('contact')}>Contact</button></li>
         </ul>
       </div>
