@@ -936,6 +936,7 @@
   overflow: hidden;
   margin-bottom: 16px;
   border: 1px solid var(--border);
+  position: relative;
 }
 
 .screenshot-main img {
@@ -946,16 +947,32 @@
 
 .screenshot-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;
 }
 
-.screenshot-grid img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+.screenshot-item {
   border-radius: 12px;
+  overflow: hidden;
   border: 1px solid var(--border);
+  position: relative;
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.screenshot-label {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--card-bg);
 }
 
 .project-section {

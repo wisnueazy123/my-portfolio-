@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion'
 import { FiArrowLeft, FiShield, FiUsers, FiFileText, FiDatabase, FiLock, FiSun, FiMoon, FiPackage, FiShoppingCart, FiBarChart2 } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
-import gudangkitaDashboard from '../assets/gudangkita-dashboard.png'
-import gudangkitaLogin from '../assets/gudangkita-login.png'
-import gudangkitaItems from '../assets/gudangkita-items.png'
+import gk01 from '../assets/gk-01-login.png'
+import gk02 from '../assets/gk-02-dashboard.png'
+import gk03 from '../assets/gk-03-items.png'
+import gk04 from '../assets/gk-04-item-create.png'
+import gk05 from '../assets/gk-05-item-detail.png'
+import gk06 from '../assets/gk-06-categories.png'
+import gk07 from '../assets/gk-07-category-create.png'
+import gk08 from '../assets/gk-08-transactions.png'
+import gk09 from '../assets/gk-09-transaction-create.png'
+import gk10 from '../assets/gk-10-users.png'
+import gk11 from '../assets/gk-11-user-create.png'
+import gk12 from '../assets/gk-12-activity-logs.png'
 
 const features = [
   {
@@ -115,11 +124,54 @@ export default function ProjectGudangKita() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="screenshot-main">
-            <img src={gudangkitaDashboard} alt="Dashboard GudangKita" />
+            <img src={gk01} alt="Login Page" />
+            <span className="screenshot-label">Login Page</span>
+          </div>
+          <div className="screenshot-main">
+            <img src={gk02} alt="Dashboard" />
+            <span className="screenshot-label">Dashboard</span>
           </div>
           <div className="screenshot-grid">
-            <img src={gudangkitaLogin} alt="Login Page" />
-            <img src={gudangkitaItems} alt="Items Page" />
+            <div className="screenshot-item">
+              <img src={gk03} alt="Daftar Barang" />
+              <span className="screenshot-label">Daftar Barang</span>
+            </div>
+            <div className="screenshot-item">
+              <img src={gk04} alt="Tambah Barang" />
+              <span className="screenshot-label">Tambah Barang</span>
+            </div>
+            <div className="screenshot-item">
+              <img src={gk05} alt="Detail Barang" />
+              <span className="screenshot-label">Detail Barang</span>
+            </div>
+            <div className="screenshot-item">
+              <img src={gk06} alt="Daftar Kategori" />
+              <span className="screenshot-label">Daftar Kategori</span>
+            </div>
+            <div className="screenshot-item">
+              <img src={gk07} alt="Tambah Kategori" />
+              <span className="screenshot-label">Tambah Kategori</span>
+            </div>
+            <div className="screenshot-item">
+              <img src={gk08} alt="Daftar Transaksi" />
+              <span className="screenshot-label">Daftar Transaksi</span>
+            </div>
+            <div className="screenshot-item">
+              <img src={gk09} alt="Tambah Transaksi" />
+              <span className="screenshot-label">Tambah Transaksi</span>
+            </div>
+            <div className="screenshot-item">
+              <img src={gk10} alt="Daftar Pengguna" />
+              <span className="screenshot-label">Daftar Pengguna</span>
+            </div>
+            <div className="screenshot-item">
+              <img src={gk11} alt="Tambah Pengguna" />
+              <span className="screenshot-label">Tambah Pengguna</span>
+            </div>
+            <div className="screenshot-item">
+              <img src={gk12} alt="Activity Logs" />
+              <span className="screenshot-label">Activity Logs</span>
+            </div>
           </div>
         </motion.div>
 
