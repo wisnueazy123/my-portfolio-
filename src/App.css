@@ -937,6 +937,12 @@
   margin-bottom: 16px;
   border: 1px solid var(--border);
   position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.screenshot-main:hover {
+  transform: scale(1.01);
 }
 
 .screenshot-main img {
@@ -946,9 +952,9 @@
 }
 
 .screenshot-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .screenshot-item {
@@ -956,20 +962,25 @@
   overflow: hidden;
   border: 1px solid var(--border);
   position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.screenshot-item:hover {
+  transform: scale(1.01);
 }
 
 .screenshot-item img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
 .screenshot-label {
   display: block;
   text-align: center;
-  padding: 8px;
-  font-size: 0.8rem;
+  padding: 10px;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text);
   background: var(--card-bg);
@@ -1199,10 +1210,6 @@
     align-items: center;
   }
 
-  .screenshot-grid {
-    grid-template-columns: 1fr;
-  }
-
   .features-grid {
     grid-template-columns: 1fr;
   }
@@ -1210,4 +1217,43 @@
   .tech-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: pointer;
+}
+
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.lightbox-caption {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 16px;
 }

@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion'
-import { FiArrowLeft, FiShield, FiUsers, FiFileText, FiDatabase, FiLock, FiSun, FiMoon, FiPackage, FiShoppingCart, FiBarChart2 } from 'react-icons/fi'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiArrowLeft, FiShield, FiUsers, FiFileText, FiDatabase, FiLock, FiSun, FiMoon, FiPackage, FiShoppingCart, FiBarChart2, FiX } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import gk01 from '../assets/gk-01-login.png'
 import gk02 from '../assets/gk-02-dashboard.png'
@@ -84,6 +85,23 @@ const fadeUp = {
 }
 
 export default function ProjectGudangKita() {
+  const [lightbox, setLightbox] = useState(null)
+
+  const screenshots = [
+    { src: gk01, label: 'Login Page' },
+    { src: gk02, label: 'Dashboard' },
+    { src: gk03, label: 'Daftar Barang' },
+    { src: gk04, label: 'Tambah Barang' },
+    { src: gk05, label: 'Detail Barang' },
+    { src: gk06, label: 'Daftar Kategori' },
+    { src: gk07, label: 'Tambah Kategori' },
+    { src: gk08, label: 'Daftar Transaksi' },
+    { src: gk09, label: 'Tambah Transaksi' },
+    { src: gk10, label: 'Daftar Pengguna' },
+    { src: gk11, label: 'Tambah Pengguna' },
+    { src: gk12, label: 'Activity Logs' },
+  ]
+
   return (
     <div className="project-detail">
       <div className="container">
@@ -123,57 +141,38 @@ export default function ProjectGudangKita() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="screenshot-main">
-            <img src={gk01} alt="Login Page" />
-            <span className="screenshot-label">Login Page</span>
-          </div>
-          <div className="screenshot-main">
-            <img src={gk02} alt="Dashboard" />
-            <span className="screenshot-label">Dashboard</span>
-          </div>
-          <div className="screenshot-grid">
-            <div className="screenshot-item">
-              <img src={gk03} alt="Daftar Barang" />
-              <span className="screenshot-label">Daftar Barang</span>
+          {screenshots.map((shot, i) => (
+            <div key={i} className="screenshot-item" onClick={() => setLightbox(shot)}>
+              <img src={shot.src} alt={shot.label} />
+              <span className="screenshot-label">{shot.label}</span>
             </div>
-            <div className="screenshot-item">
-              <img src={gk04} alt="Tambah Barang" />
-              <span className="screenshot-label">Tambah Barang</span>
-            </div>
-            <div className="screenshot-item">
-              <img src={gk05} alt="Detail Barang" />
-              <span className="screenshot-label">Detail Barang</span>
-            </div>
-            <div className="screenshot-item">
-              <img src={gk06} alt="Daftar Kategori" />
-              <span className="screenshot-label">Daftar Kategori</span>
-            </div>
-            <div className="screenshot-item">
-              <img src={gk07} alt="Tambah Kategori" />
-              <span className="screenshot-label">Tambah Kategori</span>
-            </div>
-            <div className="screenshot-item">
-              <img src={gk08} alt="Daftar Transaksi" />
-              <span className="screenshot-label">Daftar Transaksi</span>
-            </div>
-            <div className="screenshot-item">
-              <img src={gk09} alt="Tambah Transaksi" />
-              <span className="screenshot-label">Tambah Transaksi</span>
-            </div>
-            <div className="screenshot-item">
-              <img src={gk10} alt="Daftar Pengguna" />
-              <span className="screenshot-label">Daftar Pengguna</span>
-            </div>
-            <div className="screenshot-item">
-              <img src={gk11} alt="Tambah Pengguna" />
-              <span className="screenshot-label">Tambah Pengguna</span>
-            </div>
-            <div className="screenshot-item">
-              <img src={gk12} alt="Activity Logs" />
-              <span className="screenshot-label">Activity Logs</span>
-            </div>
-          </div>
+          ))}
         </motion.div>
+
+        <AnimatePresence>
+          {lightbox && (
+            <motion.div
+              className="lightbox-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setLightbox(null)}
+            >
+              <button className="lightbox-close" onClick={() => setLightbox(null)}>
+                <FiX size={28} />
+              </button>
+              <motion.img
+                src={lightbox.src}
+                alt={lightbox.label}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
+              />
+              <p className="lightbox-caption">{lightbox.label}</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <motion.section
           className="project-section"
