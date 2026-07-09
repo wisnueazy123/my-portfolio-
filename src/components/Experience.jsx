@@ -1,24 +1,44 @@
 import { motion } from 'framer-motion'
-import { FiBriefcase } from 'react-icons/fi'
+import { FiBriefcase, FiShoppingBag, FiMonitor } from 'react-icons/fi'
 
 const experiences = [
   {
+    role: 'Sales & Admin Social Media',
+    company: 'CV Perfecto Golf',
+    period: '2024 - 2026',
+    icon: <FiShoppingBag />,
+    desc: [
+      'Melayani penjualan perlengkapan golf (driver, iron, putter, shaft, grip, dll.)',
+      'Mengelola media sosial dan membuat konten promosi',
+      'Membalas chat pelanggan dan memberikan konsultasi produk',
+      'Mengelola stok serta data produk',
+      'Membuat postingan promosi dan materi pemasaran',
+      'Membantu administrasi penjualan dan transaksi',
+    ]
+  },
+  {
+    role: 'Support IT',
+    company: 'PT Ciptadra Soft Indo',
+    period: '2023 - 2024',
+    icon: <FiMonitor />,
+    desc: [
+      'Memberikan dukungan teknis kepada pengguna',
+      'Membantu instalasi dan konfigurasi perangkat lunak',
+      'Menangani troubleshooting perangkat keras dan perangkat lunak',
+      'Membantu pemeliharaan sistem dan jaringan',
+      'Mendukung operasional tim IT',
+    ]
+  },
+  {
     role: 'Full Stack Developer',
-    company: 'Tugas Akademis',
-    period: '2026',
-    desc: 'Mengembangkan Sistem Inventaris Gudang "GudangKita" dengan Laravel 10, menerapkan autentikasi multi-level user, enkripsi AES-256 untuk keamanan password, serta invoice PDF otomatis.'
-  },
-  {
-    role: 'Web Developer',
-    company: 'Proyek Organisasi',
-    period: '2025',
-    desc: 'Membangun website landing page untuk organisasi karang taruna CRAION dengan fitur galeri, testimoni carousel, dan integrasi Google Maps.'
-  },
-  {
-    role: 'Freelance Developer',
-    company: 'Self-Employed',
-    period: '2024 - Sekarang',
-    desc: 'Mengerjakan berbagai proyek web development menggunakan React, Laravel, dan MySQL untuk klien lokal.'
+    company: 'Proyek Akademis',
+    period: '2025 - Sekarang',
+    icon: <FiBriefcase />,
+    desc: [
+      'Mengembangkan Sistem Inventaris Gudang "GudangKita" dengan Laravel 10',
+      'Menerapkan autentikasi multi-level user dan enkripsi AES-256',
+      'Membangun website landing page CARION dengan Bootstrap 5 & Google Maps API',
+    ]
   }
 ]
 
@@ -56,13 +76,17 @@ export default function Experience() {
               variants={fadeUp}
             >
               <div className="timeline-dot">
-                <FiBriefcase size={10} />
+                {exp.icon}
               </div>
               <div className="timeline-content">
                 <span className="timeline-period">{exp.period}</span>
                 <h3>{exp.role}</h3>
                 <h4>{exp.company}</h4>
-                <p>{exp.desc}</p>
+                <ul className="timeline-list">
+                  {exp.desc.map((item, j) => (
+                    <li key={j}>{item}</li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
