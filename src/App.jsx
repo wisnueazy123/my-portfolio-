@@ -37,7 +37,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/my-portfolio-">
         {loading && <Loading onComplete={() => setLoading(false)} />}
         {!loading && (
           <Routes>
