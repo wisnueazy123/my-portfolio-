@@ -2,36 +2,37 @@ import { motion } from 'framer-motion'
 
 const skillCategories = [
   {
-    title: 'Frontend',
-    icon: '🎨',
-    skills: [
-      { name: 'React', level: 80 },
-      { name: 'Vue.js', level: 60 },
-      { name: 'TypeScript', level: 55 },
-      { name: 'Tailwind CSS', level: 85 },
-      { name: 'Bootstrap', level: 80 }
-    ]
-  },
-  {
     title: 'Backend',
     icon: '⚙️',
     skills: [
-      { name: 'Laravel', level: 90 },
-      { name: 'PHP', level: 88 },
-      { name: 'Node.js', level: 55 },
-      { name: 'Python', level: 45 },
-      { name: 'MySQL', level: 85 }
+      { name: 'PHP', level: 85 },
+      { name: 'Laravel 10', level: 90 },
+      { name: 'MySQL', level: 80 },
+      { name: 'REST API', level: 70 },
     ]
   },
   {
-    title: 'Tools & Others',
+    title: 'Frontend',
+    icon: '🎨',
+    skills: [
+      { name: 'HTML5', level: 90 },
+      { name: 'CSS3', level: 85 },
+      { name: 'JavaScript', level: 75 },
+      { name: 'Bootstrap 5', level: 85 },
+      { name: 'Tailwind CSS', level: 80 },
+      { name: 'Blade Template', level: 85 },
+    ]
+  },
+  {
+    title: 'Tools & Lainnya',
     icon: '🛠️',
     skills: [
-      { name: 'Git', level: 80 },
-      { name: 'Docker', level: 50 },
-      { name: 'Linux', level: 70 },
+      { name: 'Git & GitHub', level: 75 },
       { name: 'VS Code', level: 90 },
-      { name: 'Postman', level: 75 }
+      { name: 'Vite', level: 70 },
+      { name: 'DomPDF', level: 75 },
+      { name: 'Google Maps API', level: 65 },
+      { name: 'AES-256 Encryption', level: 70 },
     ]
   }
 ]
