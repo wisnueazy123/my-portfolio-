@@ -1,27 +1,39 @@
+import { useState } from 'react'
+import { ThemeProvider } from './components/ThemeContext'
+import Loading from './components/Loading'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
+import Certificates from './components/Certificates'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import './App.css'
 
 function App() {
+  const [loading, setLoading] = useState(true)
+
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <ThemeProvider>
+      {loading && <Loading onComplete={() => setLoading(false)} />}
+      {!loading && (
+        <>
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <Experience />
+            <Certificates />
+            <Contact />
+          </main>
+          <Footer />
+        </>
+      )}
+    </ThemeProvider>
   )
 }
 

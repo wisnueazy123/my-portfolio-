@@ -1,39 +1,79 @@
+import { motion } from 'framer-motion'
+import { FiMapPin, FiMail, FiCalendar } from 'react-icons/fi'
+
 export default function About() {
   return (
     <section id="about" className="section">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          About Me
+        </motion.h2>
         <div className="about-content">
-          <div className="about-text">
+          <motion.div
+            className="about-text"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <p>
-              I am a passionate full stack developer with experience in building
-              web applications from concept to deployment. I enjoy turning complex
-              problems into simple, beautiful, and intuitive solutions.
+              Saya adalah seorang developer yang passionate dalam membangun aplikasi web
+              modern. Dengan pengalaman dalam full-stack development, saya menikmati
+              proses mengubah ide kompleks menjadi solusi yang sederhana, indah, dan
+              mudah digunakan.
             </p>
             <p>
-              When I'm not coding, you'll find me exploring new technologies,
-              contributing to open source projects, or writing technical articles.
+              Saya memiliki keahlian dalam Laravel, React, dan MySQL. Fokus utama saya
+              adalah keamanan data, performa aplikasi, dan user experience yang optimal.
             </p>
             <div className="about-info">
               <div className="info-item">
-                <strong>Name:</strong> Wisnu Prasetyo
+                <FiMail className="info-icon" />
+                <div>
+                  <strong>Email</strong>
+                  <span>wisnu@example.com</span>
+                </div>
               </div>
               <div className="info-item">
-                <strong>Email:</strong> wisnu@example.com
+                <FiMapPin className="info-icon" />
+                <div>
+                  <strong>Lokasi</strong>
+                  <span>Indonesia</span>
+                </div>
               </div>
               <div className="info-item">
-                <strong>Location:</strong> Indonesia
+                <FiCalendar className="info-icon" />
+                <div>
+                  <strong> Pengalaman</strong>
+                  <span>2+ Tahun</span>
+                </div>
               </div>
               <div className="info-item">
-                <strong>Availability:</strong> Freelance / Full-Time
+                <span className="info-icon status-dot" />
+                <div>
+                  <strong>Status</strong>
+                  <span>Open to Work</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="about-image">
+          </motion.div>
+          <motion.div
+            className="about-image"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="avatar-placeholder">
               <span>WP</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,40 +1,70 @@
+import { motion } from 'framer-motion'
+import { FiBriefcase } from 'react-icons/fi'
+
 const experiences = [
   {
-    role: 'Senior Full Stack Developer',
-    company: 'Tech Corp',
-    period: '2023 - Present',
-    desc: 'Leading development of microservices architecture. Mentoring junior developers and implementing CI/CD pipelines.'
-  },
-  {
     role: 'Full Stack Developer',
-    company: 'StartupXYZ',
-    period: '2021 - 2023',
-    desc: 'Built and maintained multiple client-facing web applications. Reduced page load times by 40% through optimization.'
+    company: 'Tugas Akademis',
+    period: '2026',
+    desc: 'Mengembangkan Sistem Inventaris Gudang "GudangKita" dengan Laravel 10, menerapkan autentikasi multi-level user, enkripsi AES-256 untuk keamanan password, serta invoice PDF otomatis.'
   },
   {
-    role: 'Junior Developer',
-    company: 'WebAgency',
-    period: '2019 - 2021',
-    desc: 'Developed responsive websites and RESTful APIs. Collaborated with design team on UI/UX improvements.'
+    role: 'Web Developer',
+    company: 'Proyek Organisasi',
+    period: '2025',
+    desc: 'Membangun website landing page untuk organisasi karang taruna CRAION dengan fitur galeri, testimoni carousel, dan integrasi Google Maps.'
+  },
+  {
+    role: 'Freelance Developer',
+    company: 'Self-Employed',
+    period: '2024 - Sekarang',
+    desc: 'Mengerjakan berbagai proyek web development menggunakan React, Laravel, dan MySQL untuk klien lokal.'
   }
 ]
+
+const fadeUp = {
+  hidden: { opacity: 0, x: -30 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.2, duration: 0.5, ease: 'easeOut' }
+  })
+}
 
 export default function Experience() {
   return (
     <section id="experience" className="section section-alt">
       <div className="container">
-        <h2 className="section-title">Experience</h2>
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Experience
+        </motion.h2>
         <div className="timeline">
           {experiences.map((exp, i) => (
-            <div key={i} className="timeline-item">
-              <div className="timeline-dot" />
+            <motion.div
+              key={i}
+              className="timeline-item"
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+            >
+              <div className="timeline-dot">
+                <FiBriefcase size={10} />
+              </div>
               <div className="timeline-content">
                 <span className="timeline-period">{exp.period}</span>
                 <h3>{exp.role}</h3>
                 <h4>{exp.company}</h4>
                 <p>{exp.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
