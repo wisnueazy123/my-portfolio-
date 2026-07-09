@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './components/ThemeContext'
 import Loading from './components/Loading'
 import Navbar from './components/Navbar'
@@ -10,29 +11,41 @@ import Experience from './components/Experience'
 import Certificates from './components/Certificates'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ProjectGudangKita from './pages/ProjectGudangKita'
 import './App.css'
+
+function HomePage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Certificates />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  )
+}
 
 function App() {
   const [loading, setLoading] = useState(true)
 
   return (
     <ThemeProvider>
-      {loading && <Loading onComplete={() => setLoading(false)} />}
-      {!loading && (
-        <>
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Experience />
-            <Certificates />
-            <Contact />
-          </main>
-          <Footer />
-        </>
-      )}
+      <BrowserRouter>
+        {loading && <Loading onComplete={() => setLoading(false)} />}
+        {!loading && (
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/project/gudangkita" element={<ProjectGudangKita />} />
+          </Routes>
+        )}
+      </BrowserRouter>
     </ThemeProvider>
   )
 }

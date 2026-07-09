@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 import gudangkitaImg from '../assets/gudangkita-dashboard.png'
 import craionImg from '../assets/craion-logo.png'
 
@@ -8,8 +9,9 @@ const projects = [
     title: 'GudangKita - Sistem Inventaris Gudang',
     desc: 'Aplikasi web manajemen inventaris gudang untuk tugas akademis keamanan basis data. Mengimplementasikan autentikasi multi-level user (Admin, Manager, Staff) dengan hak akses berbeda, enkripsi password AES-256-CBC menggunakan Laravel Crypt, CRUD barang & kategori, pencatatan transaksi masuk/keluar dengan stok otomatis, generate invoice PDF via DomPDF, dashboard statistik real-time, serta dark/light mode.',
     tags: ['Laravel 10', 'PHP 8.1', 'MySQL 8', 'Tailwind CSS', 'AES-256', 'DomPDF'],
-    github: 'https://github.com/wisnueazy123/inventory-management',
+    github: 'https://github.com/wisnueazy123/inventory-managemen',
     live: 'http://localhost:8000',
+    detail: '/project/gudangkita',
     image: gudangkitaImg
   },
   {
@@ -71,11 +73,17 @@ export default function Projects() {
                 ))}
               </div>
               <div className="project-links">
+                {project.detail ? (
+                  <Link to={project.detail} className="project-link-btn detail">
+                    <FiExternalLink /> Lihat Detail
+                  </Link>
+                ) : (
+                  <a href={project.live} className="project-link-btn live" target="_blank" rel="noopener noreferrer">
+                    <FiExternalLink /> Live Demo
+                  </a>
+                )}
                 <a href={project.github} className="project-link-btn github" target="_blank" rel="noopener noreferrer">
                   <FiGithub /> GitHub
-                </a>
-                <a href={project.live} className="project-link-btn live" target="_blank" rel="noopener noreferrer">
-                  <FiExternalLink /> Live Demo
                 </a>
               </div>
             </motion.div>
